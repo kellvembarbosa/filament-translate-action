@@ -1,16 +1,19 @@
 <?php
 
-namespace pxlrbt\FilamentTranslateAction;
+namespace pxlrbt\FilamentActivityLog;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class TranslateActionServiceProvider extends PackageServiceProvider
+class FilamentActivityLogServiceProvider extends PackageServiceProvider
 {
+    public static string $name = 'filament-activity-log';
+
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('filament-translate-action')
+            ->name(static::$name)
+            ->hasViews()
             ->hasTranslations();
     }
 }
